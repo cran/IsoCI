@@ -2,10 +2,10 @@
 \alias{bandwidth.choose}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-Selection of optiaml bandwidth for nonparametric density estimation of currenst status survival times.
+Selection of optiaml bandwidth for nonparametric density estimation of currenst status failure times.
 }
 \description{
-This function conducts likelihood-based leave-one-out croos-validation (loocv) to select optimal bandwidth for nonparametric density estimation of currenst status survival times.
+Conduct likelihood-based leave-one-out croos-validation (loocv) to select optimal bandwidth for nonparametric density estimation of currenst status failure times.
 }
 
 \usage{
@@ -25,7 +25,7 @@ bandwidth.choose(h.set, z, d)
 %%  ~Describe the value returned
 %%  If it is a LIST, use
   \item{h.opt}{an optimal bandwidth}
-  \item{result.table}{the 1st column: bandwidth, the 2nd column: loocv-loglikelihood value}
+  \item{result.table}{the 1st column: bandwidth, the 2nd column: loocv-log-likelihood value}
 
 }
 \references{
@@ -61,11 +61,9 @@ h.opt = bandwidth.choose(h.set=seq(0.1,2,len=15),z=z,d=d)
 fit.wald <- iso.ci(z=z,d=d,h.opt=h.opt$h.opt)
 
 # Bootstrap confidence intervals
-# NOT RUN
 \dontrun{fit.bt <- iso.ci(z=z,d=d,method="bt",nboots=100) }
 
 # Untransforemd and transformed bootstrap-Wald-type confidence intervals
-# NOT RUN
 \dontrun{fit.bt.wald <- iso.ci(z=z,d=d,method="bt.wald",nboots=100)}
 }
 

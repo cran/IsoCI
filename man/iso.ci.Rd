@@ -2,10 +2,10 @@
 \alias{iso.ci}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-Calculating confidence intervals for cumulative distribution functions of current stuas survival times.
+Calculate confidence intervals for cumulative distribution function of current stuas failure times
 }
 \description{
-This function calculates untransformed and transforemd Wald-type confidence intervals, bootstrap confidente inverals and boostrap-Wald confidnece intervals for cumulative distribution functions of current stuas survival times.
+Calculate untransformed and transforemd Wald-type confidence intervals, bootstrap confidente inverals and boostrap-Wald confidnece intervals for cumulative distribution function of current stuas failure times.
 }
 \usage{
 iso.ci(z, d, alpha=0.05, h.opt=0.3, nboots=500, method="wald.tr", seed=1253)
@@ -19,7 +19,7 @@ a vector of covariate
 a vector of outcome
 }
   \item{alpha}{
-a level of test for 100*(1-alpha) two-sided confidence intervals.
+a test level for 100*(1-alpha) two-sided confidence intervals.
 }
   \item{h.opt}{
 an optimal bandwidth for estimating g (for "wald.tr" only)
@@ -96,11 +96,9 @@ h.opt = bandwidth.choose(h.set=seq(0.1,2,len=15),z=z,d=d)
 fit.wald <- iso.ci(z=z,d=d,h.opt=h.opt$h.opt)
 
 # Bootstrap confidence intervals
-# NOT RUN
 \dontrun{fit.bt <- iso.ci(z=z,d=d,method="bt",nboots=100) }
 
 # Untransforemd and transformed bootstrap-Wald-type confidence intervals
-# NOT RUN
 \dontrun{fit.bt.wald <- iso.ci(z=z,d=d,method="bt.wald",nboots=100)}
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
